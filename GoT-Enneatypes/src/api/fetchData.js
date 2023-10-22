@@ -1,22 +1,21 @@
-// fetchData.js
 import { API_URL } from "../constant.js";
 
-const characterId = 1;
-
-export async function fetchCharacterData(characterId) {
-    const apiUrl = `${API_URL}Characters/${1}`; 
-
+export async function fetchCharacterData(randomCharacterId) {
+    const apiUrl = `${API_URL}Characters/${randomCharacterId}`;
+   
     try {
         const response = await fetch(apiUrl);
-        if (response.ok) {
-            const data = await response.json();
-            return data;
-        } else {
-            console.error('Failed to fetch character information.');
-            return null;
+
+        if (!response.ok) {
+            throw new Error('Failed to fetch character information.');
         }
+
+        const data = await response.json();
+        return data;
     } catch (error) {
-        console.error('Error in the request:', error);
-        return null;
+        // Captura el error y muestra un mensaje al usuario y en la consola
+        const errorMessage = 'Failed to fetch character information. Please try later.';
+        console.error('Error:', errorMessage);
+        throw new Error(errorMessage);
     }
 }

@@ -1,5 +1,10 @@
+// displayCharacterInfoFromApi
+
 export function displayCharacterInfoFromApi(characterData) {
     const characterInfoContainer = document.getElementById('character-info');
+
+    // Limpia el contenido actual del contenedor
+    characterInfoContainer.innerHTML = '';
 
     function createTextElement(text, id) {
         const element = document.createElement('p');
@@ -38,7 +43,12 @@ export function displayCharacterInfoFromApi(characterData) {
                 document.getElementById('character-image').style.display = 'none';
             }
         })
-        .catch(error => { 
+        .catch(error => {
+            // Muestra el mensaje de error al usuario en un elemento <p> dentro del contenedor
+            const errorMessageElement = document.createElement('p');
+            errorMessageElement.textContent = error.message;
+            characterInfoContainer.appendChild(errorMessageElement);
+
             console.error('Error:', error);
         });
 }

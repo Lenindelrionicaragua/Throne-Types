@@ -4,20 +4,12 @@ import { fetchCharacterData } from './api/fetchData.js';
 import { displayCharacterInfoFromApi } from './data/displayCharacterInfoFromApi.js';
 import { displayCharacterFromLocal } from './data/displayCharacterFromLocal.js';
 
+const characterErrorContainer = document.getElementById('character-error-container');
+const houseListContainer = document.getElementById('house-list-container');
+
 document.addEventListener('DOMContentLoaded', async function () {
-    const characterData = await fetchCharacterData();
-    const characterId = 9; // El ID del personaje que deseas mostrar
-    const containerId = 'characterContainer'; // El ID del contenedor en el que deseas mostrar la información
+    const containerId = 'characterContainer';
 
-    displayCharacterFromLocal(characterId, containerId);
-
-  
-    displayCharacterInfoFromApi(characterData);
-
-    // Agrega el código para mostrar la lista de casas y seleccionar un personaje
-    const houseListContainer = document.getElementById('house-list-container');
-
-    // Define la lista de casas y sus personajes
     const houses = [
         { name: 'House Stark', characterIds: [2, 3, 4, 5, 6] },
         { name: 'House Lannister', characterIds: [8, 9, 14, 42] },
@@ -28,28 +20,64 @@ document.addEventListener('DOMContentLoaded', async function () {
         { name: 'House Martell', characterIds: [39, 60] },
         { name: 'House Bolton', characterIds: [28, 35] },
     ];
+    
+    function selectRandomCharacter(characterIds) {
+        const randomCharacterId = characterIds[Math.floor(Math.random() * characterIds.length)];
+        const container = document.getElementById(containerId);
+        const characterInfoContainer = document.getElementById('character-info');
+    
+        // Limpiar la imagen y la información de texto de la API
+        characterInfoContainer.innerHTML = '';
+        characterErrorContainer.textContent = ''; // Limpiar cualquier mensaje de error previo
+    
+        fetchCharacterData(randomCharacterId)
+            .then(characterData => {
+                displayCharacterInfoFromApi(characterData);
+                displayCharacterFromLocal(randomCharacterId, containerId);
+            })
+            .catch(error => {
+                container.innerHTML = ''; // Limpiar el contenido anterior
+    
+                let errorMessage;
+    
+                if (error.message === 'Failed to fetch character information.') {
+                    errorMessage = 'An error occurred while fetching character information. Please try again later.';
+                } else if (error.message === 'Character not found in dataCharacters') {
+                    errorMessage = 'Character data is no longer available. Please try again.';
+                } else {
+                    errorMessage = 'An unknown error occurred. Please try again later.';
+                }
+    
+                characterErrorContainer.textContent = errorMessage;
+                console.error('Error in the request:', error);
+            });
+    }
+    
 
-    const houseLinks = houses.map(house => {
-        const houseLink = document.createElement('a');
-        houseLink.href = '#';
-        houseLink.textContent = house.name;
+    if (houseListContainer) {
+        const houseLinks = houses.map(house => {
+            const houseLink = document.createElement('a');
+            houseLink.href = '#';
+            houseLink.textContent = house.name;
 
-        houseLink.addEventListener('click', (e) => {
-            e.preventDefault();
-            const randomCharacterId = selectRandomCharacter(house.characterIds);
-            displayCharacterFromLocal(randomCharacterId, containerId);
+            houseLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                selectRandomCharacter(house.characterIds);
+            });
+
+            return houseLink;
         });
 
-        return houseLink;
-    });
+        const houseList = document.createElement('ul');
+        houseLinks.forEach(houseLink => {
+            const houseItem = document.createElement('li');
+            houseItem.appendChild(houseLink);
+            houseList.appendChild(houseItem);
+        });
 
-    const houseList = document.createElement('ul');
-    houseLinks.forEach(houseLink => {
-        const houseItem = document.createElement('li');
-        houseItem.appendChild(houseLink);
-        houseList.appendChild(houseItem);
-    });
-
-    houseListContainer.innerHTML = '';
-    houseListContainer.appendChild(houseList);
+        houseListContainer.innerHTML = '';
+        houseListContainer.appendChild(houseList);
+    } else {
+        console.error('Element with ID "house-list-container" not found in the DOM.');
+    }
 });
