@@ -14,7 +14,7 @@ export async function fetchCharacterData(randomCharacterId) {
         return data;
     } catch (error) {
         // Captura el error y muestra un mensaje al usuario y en la consola
-        const errorMessage = 'Failed to fetch character information. Please try later.';
+        const errorMessage = 'Failed to fetch character information.';
         console.error('Error:', errorMessage);
         throw new Error(errorMessage);
     }

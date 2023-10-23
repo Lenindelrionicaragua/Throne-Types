@@ -24,6 +24,7 @@ export function displayCharacterInfoFromApi(characterData) {
     const characterTitle = createTextElement('Title', 'character-title');
     const characterFamily = createTextElement('Family', 'character-family');
     const characterImage = createImageElement('character-image');
+    characterImage.id = 'character-image';
 
     characterInfoContainer.appendChild(characterImage);
     characterInfoContainer.appendChild(characterName);

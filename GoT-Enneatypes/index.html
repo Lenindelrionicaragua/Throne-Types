@@ -1,20 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Got-Enneatypes</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" type="text/css" href="styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,100;1,200;1,900&display=swap" rel="stylesheet">   
+    <title>Thrones Types</title>
+    <!-- Agrega aquí tus metadatos, enlaces a hojas de estilo, etc., si es necesario -->
 </head>
 <body>
-    <h1>Thrones Types</h1>
-    <div id="house-list-container"></div>
-    <div id="character-info"></div>
-    <div id="characterContainer"></div>
-    <div id="character-error-container"></div>
-   
+    <header>
+        <h1>Game of Thrones Enneatypes</h1>
+    </header>
+    <main>
+        <section id="house-list">
+            <div id="house-list-container"></div>
+        </section>
+        <section id="character-details">
+            <div id="character-info"></div>
+            <div id="characterContainer"></div>
+            <div id="character-error-container"></div>
+        </section>
+    </main>
+    <footer>
+        <!-- Puedes agregar información de pie de página si es necesario -->
+    </footer>
 
-    <script type="module" src="src/main.js"></script>
+    <!-- Incluye tus scripts al final del documento -->
     <script type="module" src="src/api/fetchData.js"></script>
     <script type="module" src="src/data/displayCharacterInfoFromApi.js"></script>
-
- <!-- Incluye el archivo main.js -->
+    <script type="module" src="src/main.js"></script>
 </body>
 </html>

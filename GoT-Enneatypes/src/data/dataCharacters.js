@@ -250,7 +250,26 @@ const dataCharacters = [
     description: "Sansa Stark's desire for peace and harmony aligns with the peacemaker personality. She often seeks to avoid conflict and create a sense of tranquility, making her an empathetic and diplomatic character. However, her tendency to conform and adapt can sometimes lead to a loss of self-identity.",
     strength: "Sansa's ability to mediate and maintain calm in challenging situations makes her a valuable presence. Her compassion and desire for unity highlight her peacemaker qualities.",
     weakness: "Yet, her strong desire to avoid conflict may result in passivity and vulnerability. Her adaptability, while a strength, can sometimes lead to submissiveness and a struggle to assert her own desires."
-}
+},
+{
+    id: 33,
+    enneatype: 2,
+    name: "Jorah Mormont",
+    title: "The Helper",
+    description: "Jorah Mormont's selfless and nurturing nature aligns with the helper qualities. He consistently provides support and care for those he cares about, often putting their needs before his own.",
+    strength: "Jorah's willingness to assist others and his empathetic approach make him a reliable and compassionate friend. His protective instincts are evident in his actions.",
+    weakness: "However, his strong desire to be needed by others can lead to self-neglect and boundary issues. Jorah's tendency to focus on rescuing those he loves can sometimes become a burden."
+  },
+  {
+    id: 37,
+    enneatype: 8,
+    name: "Jeor Mormont",
+    title: "The Challenger",
+    description: "Jeor Mormont's commanding and authoritative demeanor places him in the challenger category. He is unafraid to take charge and lead, often instilling discipline and order.",
+    strength: "Jeor's assertiveness and ability to make tough decisions make him a respected leader. His unwavering commitment to his responsibilities is a hallmark of his personality.",
+    weakness: "However, his authoritarian approach can lead to conflicts, and his unwillingness to back down from challenges may lead to stubbornness. Jeor's rigid sense of duty can sometimes strain relationships."
+  }
+  
   ];
   
   function getCharacterById(characterId) {
