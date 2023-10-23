@@ -3,10 +3,10 @@ import { displayCharacterInfoFromApi } from './data/displayCharacterInfoFromApi.
 import { displayCharacterFromLocal } from './data/displayCharacterFromLocal.js';
 
 const characterErrorContainer = document.getElementById('character-error-container');
-const houseListContainer = document.getElementById('house-list-container');
+const houseListContainer = document.getElementById('house-list');
 
 document.addEventListener('DOMContentLoaded', async function () {
-    const containerId = 'characterContainer';
+    const containerId = 'character-enneatype';
 
     const houses = [
         {

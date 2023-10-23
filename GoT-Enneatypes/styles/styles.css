@@ -1,0 +1,87 @@
+body {
+    background-color: aliceblue;
+    padding: 5%;
+}
+
+/* HOUSES */
+                      
+#house-list-container {
+    list-style-type: none;
+    padding: 10%;
+    background-color: fuchsia;
+}
+
+#house-list {
+    background-color: red;
+    padding: 5%;
+}
+
+#house-list-ul {
+    list-style-type: none;
+    padding: 10%;
+    background-color: blue;
+}
+
+.house-card {
+    background-color: black;
+    padding: 5%; 
+}
+
+.house-card img {
+    max-width: 100%; /* Ajustar la imagen al ancho de la carta */
+    max-height: 100%; /* Ajustar la imagen al alto de la carta */
+    object-fit: cover; /* Mantener la proporción de la imagen */
+}
+
+
+/* CHARACTERS */
+
+        
+#character-container{
+    background-color: orange;
+    padding: 5%;
+}
+#character-info{
+    background-color: green;
+    padding: 10%; 
+}
+
+#character-enneatype{
+    background-color: yellow;
+    padding: 10%; 
+}
+
+
+#character-error-container{
+    background-color: brown;
+    padding: 10%;  
+}
+
+#character-image {
+    background-color: pink;
+    padding: 10%;   
+}
+
+#character-name {
+    background-color: pink;
+    padding: 3%;   
+}
+
+#character-family {
+    background-color: pink;
+    padding: 3%;   
+}
+
+#character-title {
+    background-color: pink;
+    padding: 3%;   
+}
+
+span{
+    background-color: pink;
+    padding: 3%;   
+}
+
+
+
+
