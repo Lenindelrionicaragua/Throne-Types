@@ -1,87 +1,119 @@
 body {
-    background-color: aliceblue;
-    padding: 5%;
+    background-color: #1D1F25;
+    height: 100vh;
+    max-width: 100vw;
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    font-family: 'Old Standard TT', serif;
+    font-size: 0.8rem; 
+    text-shadow: 2px 2px 3px #000; 
+    text-align: center;
+    color: #BBC8CF; 
+    border: 2px solid #8B4513; 
+    opacity: 0;
+    transition: opacity 1s ease;
+    
+}
+
+header.loaded {
+    opacity: 1;
+}
+
+main {
+    display: flex;
+    flex-direction: row; 
+    width: 100%;
+    height: auto; 
 }
 
 /* HOUSES */
-                      
 #house-list-container {
-    list-style-type: none;
-    padding: 10%;
-    background-color: fuchsia;
-}
-
-#house-list {
-    background-color: red;
-    padding: 5%;
-}
+    background-color:#592227;
+    padding: 20px;
+}         
 
 #house-list-ul {
-    list-style-type: none;
-    padding: 10%;
+    max-width: 75%;
     background-color: blue;
-}
-
-.house-card {
-    background-color: black;
-    padding: 5%; 
+    list-style-type: none; 
+    margin: 0px;
+    flex: 1; /* use the half of the */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    justify-items: center;
+    align-items: center;
+    
+    max-height: 100vh; /* Máxima altura igual a la altura de la ventana */
+    overflow: auto;
+   
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 .house-card img {
-    max-width: 100%; /* Ajustar la imagen al ancho de la carta */
-    max-height: 100%; /* Ajustar la imagen al alto de la carta */
-    object-fit: cover; /* Mantener la proporción de la imagen */
+  
+    max-width: 45%; 
+    object-fit: cover;
 }
 
+#character-container,
+#character-info {
+    padding: 20px;
+}
 
 /* CHARACTERS */
 
-        
-#character-container{
-    background-color: orange;
-    padding: 5%;
-}
-#character-info{
-    background-color: green;
-    padding: 10%; 
-}
-
-#character-enneatype{
-    background-color: yellow;
-    padding: 10%; 
+ #character-container {
+   width: 25%;
+    flex: 1; /* Ocupa la otra mitad del ancho disponible */
+    display: flex;
+    flex-direction: column; /* Organiza los elementos en columnas (verticalmente) */
+    align-items: center; 
+    background-color: #A65424;
+    
 }
 
+ #character-info {
+   
+    text-align: left;
+    overflow-y: auto; /* Oculta el texto que desborda */
+    white-space: nowrap; /* Evita el salto de línea del texto largo */
+    max-width: 100%;
+    /* Evita que el texto se extienda más allá del ancho del contenedor */
+   
+}
 
-#character-error-container{
-    background-color: brown;
-    padding: 10%;  
+#character-enneatype {
+    text-align: justify;
+    
 }
 
 #character-image {
-    background-color: pink;
-    padding: 10%;   
+        width: 200px;
+        height: auto;    
 }
 
-#character-name {
-    background-color: pink;
-    padding: 3%;   
+#character-error-container {
+    text-align: center;
+    font-size: 30px; /* Tamaño de letra más grande */
+    color: #BBC8CF; /* Color rojo */
+    font-family: 'Old Standard TT', serif; /* Estilo de letra medieval */
+    padding: 20px; /* Espaciado */
+    margin: 10px; /* Margen */
+    text-transform: uppercase; /* Convierte el texto a mayúsculas */
+    height: 100vh; /* Ocupa el alto completo de la pantalla */
 }
 
-#character-family {
-    background-color: pink;
-    padding: 3%;   
-}
-
-#character-title {
-    background-color: pink;
-    padding: 3%;   
-}
-
-span{
-    background-color: pink;
-    padding: 3%;   
-}
-
-
-
-
+/*
+#house-list-container,
+#character-container {
+    width: 300px; 
+    height: 100vh; 
+    overflow: auto; 
+} */

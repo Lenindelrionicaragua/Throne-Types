@@ -5,8 +5,13 @@ import { displayCharacterFromLocal } from './data/displayCharacterFromLocal.js';
 const characterErrorContainer = document.getElementById('character-error-container');
 const houseListContainer = document.getElementById('house-list');
 
+document.addEventListener('DOMContentLoaded', function () {
+    const header = document.querySelector('header');
+    header.classList.add('loaded');
+});
+
 document.addEventListener('DOMContentLoaded', async function () {
-    const containerId = 'character-enneatype';
+    const enneatypeData = 'character-enneatype';
 
     const houses = [
         {
@@ -46,19 +51,19 @@ document.addEventListener('DOMContentLoaded', async function () {
         },
         {
             name: 'House Bolton',
-            imagePath: 'assets/housesImg/House Bolton.jpeg',
+            imagePath: 'assets/housesImg/House Bolton.png',
             characterIds: [28, 35]
         },
         {
             name: 'House Mormont',
-            imagePath: 'assets/housesImg/House Mormont.jpeg',
+            imagePath: 'assets/housesImg/House Mormont.png',
             characterIds: [37, 33]
         },
     ];
    
     function selectRandomCharacter(characterIds) {
         const randomCharacterId = characterIds[Math.floor(Math.random() * characterIds.length)];
-        const container = document.getElementById(containerId);
+        const enneatype = document.getElementById(enneatypeData);
         const characterInfoContainer = document.getElementById('character-info');
     
         // Limpiar la imagen y la información de texto de la API
@@ -68,10 +73,10 @@ document.addEventListener('DOMContentLoaded', async function () {
         fetchCharacterData(randomCharacterId)
             .then(characterData => {
                 displayCharacterInfoFromApi(characterData);
-                displayCharacterFromLocal(randomCharacterId, containerId);
+                displayCharacterFromLocal(randomCharacterId, enneatypeData);
             })
             .catch(error => {
-                container.innerHTML = ''; // Limpiar el contenido anterior
+                enneatype.innerHTML = ''; // Limpiar el contenido anterior
             
                 let errorMessage;
             
