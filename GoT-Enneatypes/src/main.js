@@ -2,7 +2,7 @@ import { fetchCharacterData } from './api/fetchData.js';
 import { displayCharacterInfoFromApi } from './data/displayCharacterInfoFromApi.js';
 import { displayCharacterFromLocal } from './data/displayCharacterFromLocal.js';
 
-const characterErrorContainer = document.getElementById('character-error-container');
+const characterErrorContainer = document.getElementById('character-error-message');
 const houseListContainer = document.getElementById('house-list');
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 document.addEventListener('DOMContentLoaded', async function () {
-    const enneatypeData = 'character-enneatype';
+    const enneatypeData = 'character-enneatype-info';
 
     const houses = [
         {
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     function selectRandomCharacter(characterIds) {
         const randomCharacterId = characterIds[Math.floor(Math.random() * characterIds.length)];
         const enneatype = document.getElementById(enneatypeData);
-        const characterInfoContainer = document.getElementById('character-info');
+        const characterInfoContainer = document.getElementById('character-basic-info');
     
         // Limpiar la imagen y la información de texto de la API
         characterInfoContainer.innerHTML = '';

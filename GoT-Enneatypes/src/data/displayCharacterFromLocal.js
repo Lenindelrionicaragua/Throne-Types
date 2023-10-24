@@ -2,12 +2,12 @@ import { getCharacterById } from '../data/dataCharacters.js';
 
 export function displayCharacterFromLocal(randomCharacterId, enneatypeData) {
     const characterEnneatype = document.getElementById(enneatypeData);
-    const characterErrorContainer = document.getElementById('character-error-container');
+    const characterErrorContainer = document.getElementById('character-error-message');
     const character = getCharacterById(randomCharacterId);
 
     if (character) {
         characterEnneatype.innerHTML = '';
-        createParagraph('Enneatype', character.title);
+        createParagraph('Enneatype', character.enneatype);
         createParagraph('Description', character.description);
         createParagraph('Strength', character.strength);
         createParagraph('Weakness', character.weakness);
@@ -20,7 +20,12 @@ export function displayCharacterFromLocal(randomCharacterId, enneatypeData) {
 
     function createParagraph(label, text) {
         const paragraph = document.createElement('p');
-        paragraph.innerHTML = `${label}: <span>${text}</span>`;
+        paragraph.innerHTML = `<span>${text}</span>`;
+        
+        if (label === 'Enneatype') {
+            paragraph.classList.add('character-enneatype-title');
+        }
+    
         characterEnneatype.appendChild(paragraph);
     }
 }

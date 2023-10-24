@@ -11,7 +11,7 @@ body {
 header {
   font-family: "Old Standard TT", serif;
   font-size: 0.8rem;
-  text-shadow: 2px 2px 3px #000;
+  text-shadow: 2px 2px 3px #010000;
   text-align: center;
   color: #bbc8cf;
   opacity: 0;
@@ -55,6 +55,10 @@ main {
   max-width: 60%;
   height: auto;
   object-fit: cover;
+  border: 1px solid #1d1f25; /* Color marrón que da un aspecto medieval */
+  border-radius: 10px;
+  background-color: #592227; /* Fondo oscuro que resalta el contenido */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra suave para un efecto tridimensional */
 }
 
 /* CHARACTERS */
@@ -63,42 +67,68 @@ main {
   flex: 1;
   display: flex;
   flex-direction: row-reverse;
-  background-color: #a65424;
+  background-color: #bbc8cf;
+  padding: 0px 40px 0px 40px;
 }
 
-#character-image {
-  width: 200px;
-  height: auto;
+.logo {
+  top: 30%;
+  left: 70%;
+  position: absolute;
+  max-width: 10%;
 }
 
-#character-info {
-  text-align: left;
-}
-
-#character-enneatype {
-  text-align: justify;
-}
-
-#character-error-container {
-  font-family: "Old Standard TT", serif;
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 30px;
-  color: #bbc8cf;
+.journey-text {
+  font-size: 2rem;
 }
 
 #text-cover-character-container {
   font-family: "Old Standard TT", serif;
   font-size: 1.5rem;
-  text-shadow: 1px 1px 2px #000;
+
   text-align: center;
   text-align: justify;
+  color: #1d1f25;
+}
+
+#character-image {
+  width: 300px;
+  height: auto;
+  border: 1px solid #1d1f25;
+  border-radius: 10px;
+  background-color: #592227;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#character-basic-info {
+  text-align: left;
+  padding-left: 20px;
+}
+
+.character-enneatype-title {
+  background-color: #1d1f25;
+  font-family: "Old Standard TT", serif;
+  font-size: 2rem;
+  text-shadow: 2px 2px 3px #010000;
+  text-align: center;
   color: #bbc8cf;
-  padding: 20px;
+  padding-top: 8px;
+}
+
+#character-enneatype-info {
+  text-align: justify;
+  padding-right: 20px;
+}
+
+#character-error-message {
+  font-family: "Old Standard TT", serif;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 30px;
+  color: #1d1f25;
 }
 
 #character-container,
 #character-info {
   align-items: center;
-  padding: 20px;
 }

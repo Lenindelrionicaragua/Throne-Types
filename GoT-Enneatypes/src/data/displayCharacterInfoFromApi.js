@@ -1,7 +1,7 @@
 // displayCharacterInfoFromApi
 
 export function displayCharacterInfoFromApi(characterData) {
-    const characterInfoContainer = document.getElementById('character-info');
+    const characterInfoContainer = document.getElementById('character-basic-info');
 
     // Limpia el contenido actual del contenedor
     characterInfoContainer.innerHTML = '';
