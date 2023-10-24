@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         const characterErrorContainer = document.getElementById('character-error-message');
         const characterInfoContainer = document.getElementById('character-basic-info');
         const logoContainer = document.getElementById('character-logo');
-    
+        const characterEnneatype = document.getElementById(enneatypeData); 
         // Borra el logo al comienzo
         if (logoContainer) {
             logoContainer.innerHTML = '';
@@ -78,12 +78,13 @@ document.addEventListener('DOMContentLoaded', async function () {
         characterErrorContainer.textContent = ''; // Limpiar cualquier mensaje de error previo
     
         fetchCharacterData(randomCharacterId)
+
             .then(characterData => {
                 displayCharacterInfoFromApi(characterData);
                 displayCharacterFromLocal(randomCharacterId, enneatypeData);
             })
             .catch(error => {
-                enneatype.innerHTML = ''; // Limpiar el contenido anterior
+               characterEnneatype.innerHTML = ''; // Limpiar el contenido anterior
             
                 let errorMessage;
             
