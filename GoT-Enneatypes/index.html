@@ -1,34 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" type="text/css" href="styles/styles.css">
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,100;1,200;1,900&family=Old+Standard+TT&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="styles/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,100;1,200;1,900&family=Old+Standard+TT&display=swap"
+      rel="stylesheet"
+    />
     <title>THRONES TYPES</title>
     <!-- Agrega aquí tus metadatos, enlaces a hojas de estilo, etc., si es necesario -->
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <h1>||THRONES|| <br> ||TYPES||</h1>
+      <h1>
+        ||THRONES|| <br />
+        ||TYPES||
+      </h1>
     </header>
     <main>
-        <section id="house-list-container">
-            <div id="house-list"></div>
-        </section>
-        <section id="character-container">
-            <div id="character-info"></div>
-            <div id="character-enneatype"></div>
-            <div id="character-error-container"></div>
-        </section>
+      <section id="house-list-container">
+        <div id="house-list"></div>
+      </section>
+      <section id="character-container">
+        <h1 id="text-cover-character-container">
+          "Embark on a Legendary Journey: <br />
+          <br />
+          Select Your House and Unravel the Enigmatic Enneatypes of Game of
+          Thrones Characters! Are you ready to unveil the secrets of Westeros?"
+        </h1>
+        <div id="character-info"></div>
+        <div id="character-enneatype"></div>
+        <div id="character-error-container"></div>
+      </section>
     </main>
     <footer>
-        <!-- Puedes agregar información de pie de página si es necesario -->
+      <!-- Puedes agregar información de pie de página si es necesario -->
     </footer>
     <script type="module" src="src/api/fetchData.js"></script>
-    <script type="module" src="src/data/displayCharacterInfoFromApi.js"></script>
+    <script
+      type="module"
+      src="src/data/displayCharacterInfoFromApi.js"
+    ></script>
     <script type="module" src="src/main.js"></script>
-</body>
+  </body>
 </html>

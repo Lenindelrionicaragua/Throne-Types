@@ -118,6 +118,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             houseLink.addEventListener('click', (e) => {
                 e.preventDefault();
                 selectRandomCharacter(house.characterIds);
+                loadingText.style.display = 'none';
             });
 
             houseItem.appendChild(houseLink);
@@ -130,3 +131,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         console.error('Element with ID "house-list-container" not found in the DOM.');
     }
 });
+
+const characterContainer = document.getElementById('character-container');
+const loadingText = document.getElementById('text-cover-character-container');
+characterContainer.insertBefore(loadingText, characterContainer.firstChild);
