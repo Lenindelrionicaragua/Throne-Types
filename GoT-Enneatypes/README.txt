@@ -1,5 +1,8 @@
 # Thrones Types
 
+https://gothronetypes.netlify.app/got-enneatypes/
+
+
 Welcome to the "Thrones Types" project!
 
 ## About
@@ -33,4 +36,5 @@ Thrones Types is a web application that lets you delve into the enneatypes of yo
 
 Clone the repository to your local machine and open the `index.html` file in your web browser.
 
-https://github.com/Lenindelrionicaragua/GoT-Enneatypes.git
+
+
