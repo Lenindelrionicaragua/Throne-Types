@@ -63,8 +63,15 @@ document.addEventListener('DOMContentLoaded', async function () {
    
     function selectRandomCharacter(characterIds) {
         const randomCharacterId = characterIds[Math.floor(Math.random() * characterIds.length)];
-        const enneatype = document.getElementById(enneatypeData);
+        const enneatypeData = 'character-enneatype-info';
+        const characterErrorContainer = document.getElementById('character-error-message');
         const characterInfoContainer = document.getElementById('character-basic-info');
+        const logoContainer = document.getElementById('character-logo');
+    
+        // Borra el logo al comienzo
+        if (logoContainer) {
+            logoContainer.innerHTML = '';
+        }
     
         // Limpiar la imagen y la información de texto de la API
         characterInfoContainer.innerHTML = '';
@@ -98,6 +105,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                 console.error('Error in the request:', error);
             });
     }
+    
     
 
     if (houseListContainer) {
