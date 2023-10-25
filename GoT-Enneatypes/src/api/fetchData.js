@@ -9,7 +9,6 @@ export async function fetchCharacterData(randomCharacterId) {
     const response = await fetch(apiUrl);
 
     if (!response.ok) {
-      // If the response status is not okay, throw an error
       throw new Error("Failed to fetch character information.");
     }
 
